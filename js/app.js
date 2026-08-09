@@ -340,50 +340,48 @@ document.addEventListener('DOMContentLoaded', () => {
             const messageInput = document.getElementById('contact-message');
             const submitBtn = document.getElementById('contact-submit-btn');
 
-            const name = nameInput.value.trim();
-            const email = emailInput.value.trim();
-            const message = messageInput.value.trim();
+            const name = nameInput ? nameInput.value.trim() : '';
+            const email = emailInput ? emailInput.value.trim() : '';
+            const message = messageInput ? messageInput.value.trim() : '';
 
             if (!name || !email || !message) {
                 showToast('Please fill out all fields.', 'error');
                 return;
             }
 
-            // Disable button & indicate sending
             if (submitBtn) {
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = 'Sending... <span class="material-symbols-outlined">hourglass_empty</span>';
             }
 
-            // Send message asynchronously to target email
+            // Submit using FormData to FormSubmit AJAX endpoint
+            const formData = new FormData(contactForm);
+
             fetch('https://formsubmit.co/ajax/anshulkushwaha81@gmail.com', {
                 method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json',
+                headers: {
                     'Accept': 'application/json'
                 },
-                body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    message: message,
-                    _subject: `New Portfolio Message from ${name}`
-                })
+                body: formData
             })
-            .then(response => response.json())
+            .then(res => {
+                if (!res.ok) throw new Error('Network response failed');
+                return res.json();
+            })
             .then(data => {
                 showToast(`Thank you, ${name}! Your message has been sent to anshulkushwaha81@gmail.com.`);
                 contactForm.reset();
-            })
-            .catch(err => {
-                console.warn('FormSubmit AJAX fallback, submitting form directly:', err);
-                showToast(`Thank you, ${name}! Your message is being sent to anshulkushwaha81@gmail.com.`);
-                contactForm.submit();
-            })
-            .finally(() => {
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = 'Send Message <span class="material-symbols-outlined">send</span>';
                 }
+            })
+            .catch(err => {
+                console.warn('AJAX sending failed, redirecting via native form submission:', err);
+                showToast(`Sending your message to anshulkushwaha81@gmail.com...`);
+                if (submitBtn) submitBtn.disabled = false;
+                // Native submission fallback
+                HTMLFormElement.prototype.submit.call(contactForm);
             });
         });
     }
