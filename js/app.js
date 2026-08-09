@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         pubListContainer.innerHTML = pubs.map(pub => `
             <article class="pub-item">
-                <a href="${pub.doiUrl || pub.scholarUrl}" target="_blank" rel="noopener" class="pub-title">${pub.title}</a>
+                <a href="${pub.scholarUrl || pub.doiUrl}" target="_blank" rel="noopener" class="pub-title">${pub.title}</a>
                 <p class="pub-authors">${pub.authorsFormatted}</p>
                 <p class="pub-journal">${pub.journal} ${pub.volumeDetails ? '• ' + pub.volumeDetails : ''} (${pub.year})</p>
                 <div class="pub-meta-row">
