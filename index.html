@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Rajat Kumar | Ph.D. Research Scholar at IIT Indore</title>
+    <meta name="description" content="Official academic portfolio of Rajat Kumar, Ph.D. Research Scholar at IIT Indore specializing in Heat Transfer, Fluid Flow, and Synthetic Jet Dynamics."/>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar">
+        <div class="container navbar-inner">
+            <a href="#home" class="brand-logo">
+                Rajat Kumar
+                <span class="brand-badge">IIT INDORE</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#research" class="nav-link">Research</a></li>
+                    <li><a href="#publications" class="nav-link">Publications</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-btn" id="theme-toggle-btn" aria-label="Toggle Dark Mode">
+                    <span class="material-symbols-outlined">dark_mode</span>
+                </button>
+                <button class="btn btn-primary" id="cv-open-btn">
+                    <span class="material-symbols-outlined">description</span> CV
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Application Container -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="section" id="home">
+            <div class="container">
+                <div class="hero-grid">
+                    <div>
+                        <h1 class="hero-name">Rajat Kumar</h1>
+                        <div class="hero-role">
+                            <span class="material-symbols-outlined">school</span>
+                            Ph.D. Research Scholar at IIT Indore
+                        </div>
+                        <p class="hero-bio">
+                            A dedicated thermal-fluids researcher investigating fundamental and applied aspects of fluid flow and heat dissipation. Specializing in <strong>Synthetic Jet Dynamics</strong>, convective heat transfer enhancement, and flow-induced vibration management.
+                        </p>
+
+                        <div class="chips-wrapper">
+                            <span class="chip">Heat transfer</span>
+                            <span class="chip">Fluid Flow</span>
+                            <span class="chip">Synthetic jet</span>
+                            <span class="chip">Vibration Energy Harvesting</span>
+                            <span class="chip">Machine Learning</span>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="#publications" class="btn btn-primary">
+                                View Publications <span class="material-symbols-outlined">arrow_downward</span>
+                            </a>
+                            <a href="#contact" class="btn btn-secondary">
+                                Contact & Collaborations
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="avatar-container">
+                        <div class="avatar-frame">
+                            <img src="assets/profile.jpg" alt="Rajat Kumar - Ph.D. Research Scholar at IIT Indore" class="avatar-img"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact & Metrics Section -->
+        <section class="section" id="impact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Impact & Recognition</h2>
+                    <p class="section-subtitle">Google Scholar citation metrics and annual research reach.</p>
+                </div>
+
+                <div class="bento-metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">Total Citations</div>
+                        <div class="metric-value">54</div>
+                        <div class="metric-sub">Across all publications</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">H-Index</div>
+                        <div class="metric-value">4</div>
+                        <div class="metric-sub">Scopus & Google Scholar</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">i10-Index</div>
+                        <div class="metric-value">2</div>
+                        <div class="metric-sub">2 papers with ≥ 10 citations</div>
+                    </div>
+                </div>
+
+                <!-- Annual Citation Chart -->
+                <div class="chart-box">
+                    <div class="chart-header">
+                        <span class="chart-title">Citations Growth (2024 – 2026)</span>
+                        <span class="brand-badge">Scholar Data</span>
+                    </div>
+                    <div class="chart-canvas-wrapper">
+                        <canvas id="citation-chart-canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research & Expertise Section -->
+        <section class="section" id="research">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Research & Expertise</h2>
+                    <p class="section-subtitle">Combining high-speed experimental diagnostics with 3D CFD computational modeling to advance thermal systems.</p>
+                </div>
+
+                <div class="research-grid">
+                    <!-- Featured Area Card -->
+                    <div class="research-card">
+                        <div class="research-card-icon">
+                            <span class="material-symbols-outlined">air</span>
+                        </div>
+                        <h3 class="research-card-title">Synthetic Jet Dynamics</h3>
+                        <p class="research-card-desc">
+                            Investigating single, multi-orifice, coaxial, and asymmetric synthetic jets for localized boundary layer control and zero-net-mass-flux active cooling. Research integrates machine learning surrogate models (ANN, GPR) for geometric shape optimization.
+                        </p>
+                        <div class="chips-wrapper" style="margin-bottom: 0;">
+                            <span class="chip">Impinging Jets</span>
+                            <span class="chip">Coaxial Jets</span>
+                            <span class="chip">Multi-Orifice Layouts</span>
+                            <span class="chip">Optimization</span>
+                        </div>
+                    </div>
+
+                    <!-- Technical Arsenal Card -->
+                    <div class="research-card">
+                        <h3 class="research-card-title">Technical Arsenal</h3>
+                        
+                        <div class="arsenal-group">
+                            <div class="arsenal-label">Computational</div>
+                            <div class="chips-wrapper">
+                                <span class="chip">ANSYS Fluent</span>
+                                <span class="chip">3D CFD</span>
+                                <span class="chip">Machine Learning</span>
+                            </div>
+                        </div>
+
+                        <div class="arsenal-group">
+                            <div class="arsenal-label">Experimental</div>
+                            <div class="chips-wrapper">
+                                <span class="chip">PIV</span>
+                                <span class="chip">Hot-wire Anemometry</span>
+                                <span class="chip">IR Thermography</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sub-grid-2" style="margin-top: 1.5rem;">
+                    <div class="research-card">
+                        <div class="research-card-icon">
+                            <span class="material-symbols-outlined">thermostat</span>
+                        </div>
+                        <h3 class="research-card-title">Convective Heat Transfer</h3>
+                        <p class="research-card-desc">
+                            Enhancing stagnation heat transfer over target surfaces roughened with pin fins and ribs. Evaluating local and spatially-averaged Nusselt number enhancements.
+                        </p>
+                    </div>
+
+                    <div class="research-card">
+                        <div class="research-card-icon">
+                            <span class="material-symbols-outlined">bolt</span>
+                        </div>
+                        <h3 class="research-card-title">Flow-Induced Vibrations & Energy Harvesting</h3>
+                        <p class="research-card-desc">
+                            Exploiting flow-induced structural vibrations to simultaneously augment fluid mixing in thermal systems and harvest waste mechanical energy via piezoelectric elements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Ledger Section -->
+        <section class="section" id="publications">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Publications & Research Ledger</h2>
+                    <p class="section-subtitle">Peer-reviewed journal articles and conference papers in fluid mechanics and thermal sciences.</p>
+                </div>
+
+                <!-- Controls: Search, Topic Filter & Sort -->
+                <div class="pub-controls">
+                    <div class="search-wrapper">
+                        <span class="material-symbols-outlined search-icon">search</span>
+                        <input type="text" id="pub-search-input" class="pub-search-input" placeholder="Search by paper title, co-author, journal, or keyword..."/>
+                    </div>
+
+                    <div class="pub-filter-bar">
+                        <div class="filter-chips-group" id="filter-chips-container">
+                            <!-- Populated dynamically via JS -->
+                        </div>
+
+                        <div class="sort-group">
+                            <span>Sort by:</span>
+                            <select id="pub-sort-select" class="sort-select">
+                                <option value="year-desc">Year (Newest First)</option>
+                                <option value="citations-desc">Citations (Highest First)</option>
+                                <option value="title-asc">Title (Alphabetical)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publications Dynamic List -->
+                <div class="pub-list" id="pub-list-container">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Journey & Co-Authors Section -->
+        <section class="section" id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Academic Journey & Collaborations</h2>
+                    <p class="section-subtitle">Research path at Indian Institute of Technology Indore and key academic co-authors.</p>
+                </div>
+
+                <div class="hero-grid" style="align-items: start;">
+                    <!-- Timeline -->
+                    <div>
+                        <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--color-primary);">Education & Research Roles</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2021 – Present</div>
+                                <h4 class="timeline-title">Ph.D. Research Scholar</h4>
+                                <div class="timeline-institution">Indian Institute of Technology Indore</div>
+                                <p class="timeline-desc">
+                                    Conducting numerical and experimental investigations on synthetic jets, impinging flow heat transfer, and machine learning optimization of thermal systems under supervision of faculty at IIT Indore.
+                                </p>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">2019 – 2021</div>
+                                <h4 class="timeline-title">Master of Technology (M.Tech)</h4>
+                                <div class="timeline-institution">Mechanical Engineering Specialization</div>
+                                <p class="timeline-desc">
+                                    Specialized in thermal engineering, fluid mechanics, and computational heat transfer modeling.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Co-Authors Cards -->
+                    <div>
+                        <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--color-primary);">Key Co-Authors & Collaborators</h3>
+                        <div class="coauthors-grid" id="coauthors-container">
+                            <!-- Populated dynamically via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Contact & Research Inquiries</h2>
+                    <p class="section-subtitle">Reach out for academic collaborations, research discussions, or paper inquiries.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label class="form-label" for="contact-name">Your Name</label>
+                                <input type="text" id="contact-name" class="form-input" placeholder="e.g. Dr. John Doe" required/>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="contact-email">Email Address</label>
+                                <input type="email" id="contact-email" class="form-input" placeholder="e.g. john@university.edu" required/>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="contact-message">Message</label>
+                                <textarea id="contact-message" class="form-textarea" placeholder="Describe your research inquiry or collaboration idea..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                Send Message <span class="material-symbols-outlined">send</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div>
+                        <div class="contact-card" style="margin-bottom: 1.5rem;">
+                            <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-primary);">Affiliation & Address</h3>
+                            <p style="font-size: 0.95rem; color: var(--color-on-surface-variant); line-height: 1.6; margin-bottom: 1rem;">
+                                <strong>Department of Mechanical Engineering</strong><br/>
+                                Indian Institute of Technology Indore<br/>
+                                Khandwa Road, Simrol, Indore 453552<br/>
+                                Madhya Pradesh, India
+                            </p>
+                            
+                            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--color-secondary); font-weight: 500;">
+                                <span class="material-symbols-outlined">mark_email_read</span>
+                                Verified email at iiti.ac.in
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-primary);">Profiles & Profiles Links</h3>
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                <a href="https://scholar.google.com/citations?user=LFQyGV4AAAAJ" target="_blank" rel="noopener" class="btn btn-secondary" style="justify-content: flex-start;">
+                                    <span class="material-symbols-outlined">school</span> Google Scholar Profile
+                                </a>
+                                <a href="https://www.iiti.ac.in/" target="_blank" rel="noopener" class="btn btn-secondary" style="justify-content: flex-start;">
+                                    <span class="material-symbols-outlined">account_balance</span> IIT Indore Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-inner">
+            <div class="footer-copy">
+                © 2026 Rajat Kumar • Indian Institute of Technology Indore
+            </div>
+            <div class="footer-links">
+                <a href="https://scholar.google.com/citations?user=LFQyGV4AAAAJ" target="_blank" rel="noopener" class="footer-link">Google Scholar</a>
+                <a href="#home" class="footer-link">Back to Top</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Citation Export Modal -->
+    <div class="modal-backdrop" id="cite-modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div class="modal-title" id="cite-modal-title">Cite Publication</div>
+                <button class="modal-close-btn" id="cite-close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 0.9rem; color: var(--color-on-surface-variant); margin-bottom: 0.75rem;">Copy BibTeX citation string:</p>
+                <div class="citation-code-block" id="cite-code-block"></div>
+                <button class="btn btn-primary" id="cite-copy-btn" style="width: 100%;">
+                    <span class="material-symbols-outlined">content_copy</span> Copy BibTeX to Clipboard
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Curriculum Vitae Drawer Modal -->
+    <div class="modal-backdrop" id="cv-modal">
+        <div class="modal-card" style="max-width: 780px;">
+            <div class="modal-header">
+                <div class="modal-title">Curriculum Vitae — Rajat Kumar</div>
+                <button class="modal-close-btn" id="cv-close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="border-bottom: 2px solid var(--color-primary); padding-bottom: 1rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1.25rem;">
+                    <img src="assets/profile.jpg" alt="Rajat Kumar" style="width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-primary);"/>
+                    <div>
+                        <h2 style="font-family: var(--font-display); font-size: 1.75rem; color: var(--color-primary); margin: 0;">Rajat Kumar</h2>
+                        <p style="font-size: 0.95rem; color: var(--color-secondary); margin: 0.15rem 0;">Ph.D. Research Scholar • Indian Institute of Technology Indore</p>
+                        <p style="font-size: 0.85rem; color: var(--color-on-surface-variant); margin: 0;">Verified Email: iiti.ac.in • Google Scholar: 54 Citations (h-index: 4)</p>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Research Interests</h3>
+                    <p style="font-size: 0.95rem; color: var(--color-on-bg);">Heat Transfer, Fluid Flow, Synthetic Jet Dynamics, Active Thermal Management, Machine Learning Optimization, Flow-Induced Vibrations.</p>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Education</h3>
+                    <ul style="padding-left: 1.25rem; font-size: 0.95rem; color: var(--color-on-bg); line-height: 1.6;">
+                        <li><strong>Ph.D. in Mechanical Engineering</strong> — IIT Indore (2021 – Present)</li>
+                        <li><strong>M.Tech in Mechanical Engineering</strong> — Thermal Specialization (2019 – 2021)</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Selected Publications Highlights</h3>
+                    <ol style="padding-left: 1.25rem; font-size: 0.9rem; color: var(--color-on-bg); line-height: 1.6;">
+                        <li>Kumar et al. (2024). Insights into the flow and heat transfer aspects of single and multi-orifice synthetic jets. <em>IJHMT</em> 231, 125897. [24 Citations]</li>
+                        <li>Kumar et al. (2025). Flow and heat transfer behavior of asymmetric synthetic jet. <em>Physics of Fluids</em> 37(3). [10 Citations]</li>
+                        <li>Mirikar, Kumar et al. (2025). Synthetic jet’s flow-induced vibrations for enhanced thermal management and energy harvesting. <em>Applied Thermal Engineering</em> 263. [8 Citations]</li>
+                        <li>Kumar et al. (2026). Optimization of multi-orifice synthetic jet configuration using flow and heat transfer characteristics coupled with machine learning. <em>ICHMT</em> 172.</li>
+                    </ol>
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 2rem;">
+                    <button class="btn btn-primary" onclick="window.print()">
+                        <span class="material-symbols-outlined">print</span> Print / Save CV as PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/publications-data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
