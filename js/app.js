@@ -335,17 +335,56 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const name = document.getElementById('contact-name').value.trim();
-            const email = document.getElementById('contact-email').value.trim();
-            const message = document.getElementById('contact-message').value.trim();
+            const nameInput = document.getElementById('contact-name');
+            const emailInput = document.getElementById('contact-email');
+            const messageInput = document.getElementById('contact-message');
+            const submitBtn = document.getElementById('contact-submit-btn');
+
+            const name = nameInput.value.trim();
+            const email = emailInput.value.trim();
+            const message = messageInput.value.trim();
 
             if (!name || !email || !message) {
                 showToast('Please fill out all fields.', 'error');
                 return;
             }
 
-            showToast(`Thank you, ${name}! Your message has been sent to Rajat Kumar.`);
-            contactForm.reset();
+            // Disable button & indicate sending
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Sending... <span class="material-symbols-outlined">hourglass_empty</span>';
+            }
+
+            // Send message asynchronously to target email
+            fetch('https://formsubmit.co/ajax/anshulkushwaha81@gmail.com', {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    message: message,
+                    _subject: `New Portfolio Message from ${name}`
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                showToast(`Thank you, ${name}! Your message has been sent to anshulkushwaha81@gmail.com.`);
+                contactForm.reset();
+            })
+            .catch(err => {
+                console.warn('FormSubmit AJAX fallback, submitting form directly:', err);
+                showToast(`Thank you, ${name}! Your message is being sent to anshulkushwaha81@gmail.com.`);
+                contactForm.submit();
+            })
+            .finally(() => {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Send Message <span class="material-symbols-outlined">send</span>';
+                }
+            });
         });
     }
 
